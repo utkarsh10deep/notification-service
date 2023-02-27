@@ -39,7 +39,7 @@ public class SMSController {
         Runnable sendSmsTask = () -> {
             Twilio.init(SMS_ACCOUNT_SID, SMS_AUTH_TOKEN);
             Message message = Message.creator(
-                            new PhoneNumber("+917488309273"),
+                            new PhoneNumber(body.getNumber()),
                             new PhoneNumber(SMS_NUMBER),
                             body.getMessage())
                     .create();
