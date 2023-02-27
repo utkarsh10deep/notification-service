@@ -34,5 +34,9 @@ public class SecretUtil {
         System.setProperty(AWS_SECRET_KEY_ID, secrets.getAwsSecretKey());
         System.setProperty(AWS_REGION_ID,secrets.getRegion());
         System.setProperty(SERVICE_KEY, secrets.getServiceAuthenticationKey());
+        System.setProperty(SMS_ACCOUNT_SID, secrets.getTwilioAccountSid());
+        System.setProperty(SMS_AUTH_TOKEN, secrets.getTwilioAuthToken());
+        System.setProperty(SMS_NUMBER, secrets.getTwilioNumber());
+
     }
 }

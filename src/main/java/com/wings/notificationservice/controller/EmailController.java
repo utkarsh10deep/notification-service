@@ -4,6 +4,7 @@ import com.wings.notificationservice.domain.AlertEmailDetails;
 import com.wings.notificationservice.domain.EmailDetails;
 import com.wings.notificationservice.domain.OtpEmailDetails;
 import com.wings.notificationservice.service.EmailService;
+import com.wings.notificationservice.service.WingsExecutorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +28,8 @@ public class EmailController {
     @Value("${service.authentication.key}")
     private String serviceAuthenticationKey;
 
-    private ExecutorService executor = Executors.newFixedThreadPool(10);
+    @Autowired
+    private WingsExecutorService executor;
 
     @PostMapping("/sendSimpleEmail")
     public ResponseEntity<String> sendMessage(@RequestBody EmailDetails emailDetails, @RequestHeader(HEADER_KEY_ID) String authenticationKey) {

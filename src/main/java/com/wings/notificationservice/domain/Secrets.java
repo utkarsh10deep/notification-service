@@ -9,6 +9,9 @@ public class Secrets {
     private String awsSecretKey;
     private String region;
     private String serviceAuthenticationKey;
+    private String twilioAccountSid;
+    private String twilioAuthToken;
+    private String twilioNumber;
 }
 
 
